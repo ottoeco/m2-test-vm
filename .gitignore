@@ -70,3 +70,7 @@ atlassian*
 /generated/*
 !/generated/.htaccess
 .DS_Store
+/update/*
+/setup/*
+/lib/*
+/bin/*
