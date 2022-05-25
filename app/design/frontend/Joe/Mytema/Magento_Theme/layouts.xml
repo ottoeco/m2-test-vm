@@ -15,6 +15,6 @@
 
     <!-- 1 Colonna -->
     <layout id="1column-joe">
-        <label translate="true">1 Colonna Joe</label>
+        <label translate="true">1 Colonna - Joe</label>
     </layout>
 </page_layouts>
