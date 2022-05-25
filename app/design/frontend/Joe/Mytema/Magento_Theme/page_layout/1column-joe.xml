@@ -6,12 +6,22 @@
  */
 -->
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
-    <update handle="empty"/>
+    <update handle="empty" />
     <referenceContainer name="page.wrapper">
-        <container name="header-menu" htmlTag="div" htmlClass="header-menu"/>
-        <container name="side-wrapper" htmlTag="div" htmlClass="side-wrapper"/>
+        <container name="header-menu" htmlTag="div" htmlClass="header-menu">
+            <container name="side-wrapper" htmlTag="div" htmlClass="side-wrapper">
+                <!-- Force container to render -->
+                <block class="Magento\Framework\View\Element\Text">
+                    <arguments>
+                        <argument name="text" xsi:type="string">
+                            <![CDATA[&nbsp;]]>
+                        </argument>
+                    </arguments>
+                </block>
+            </container>
+        </container>
 
-        <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>
-        <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer"/>
+        <container name="page.top" as="page_top" label="After Page Header" after="header.container" />
+        <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer" />
     </referenceContainer>
 </layout>
