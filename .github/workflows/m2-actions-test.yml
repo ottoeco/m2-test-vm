@@ -30,10 +30,3 @@ jobs:
       with:
         process: 'build'
         elasticsearch: 1
-    - name: 'This step will execute all the unit tests available'
-    - uses: MAD-I-T/magento-actions@v3.15
-      env:
-        COMPOSER_AUTH: ${{secrets.COMPOSER_AUTH}}
-      with:
-        process: 'unit-test'
-        elasticsearch: 1
