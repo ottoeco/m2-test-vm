@@ -1,1 +1,1 @@
-/var/www/html/magento2-sample-data/README.md
+# m2 prova github action
