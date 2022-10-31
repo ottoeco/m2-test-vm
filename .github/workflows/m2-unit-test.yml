@@ -39,3 +39,4 @@ jobs:
       with:
         process: 'unit-test'
         elasticsearch: 1
+        unit_test_subset_path: 'app/code/Joe/HelloModule/Test/Unit'
