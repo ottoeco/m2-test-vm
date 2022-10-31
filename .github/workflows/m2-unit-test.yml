@@ -39,5 +39,3 @@ jobs:
       with:
         process: 'unit-test'
         elasticsearch: 1
-        php: '7.4'
-      run: php -v
