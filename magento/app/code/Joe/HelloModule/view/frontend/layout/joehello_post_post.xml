@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="navigation.sections" remove="true"/>
+        <referenceContainer name="content">
+            <block name="post.post" template="Joe_HelloModule::/post/post.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Joe\HelloModule\ViewModel\Post\PostViewModel</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

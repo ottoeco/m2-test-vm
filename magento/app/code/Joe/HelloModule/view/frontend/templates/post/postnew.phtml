@@ -1,0 +1,23 @@
+<?php
+/**
+* @var Joe\HelloModule\ViewModel\Post\PostNewViewModel $viewModel
+* @var Magento\Framework\Escaper $escaper
+*
+*/
+$viewModel = $viewModel->getViewModel(); ?>
+<h1><?= $escaper->escapeHtml($viewModel->getTitle()) ?></h1>
+
+<form action="<?= $escaper->escapeUrl($viewModel->getPostNewAction()) ?>" method="post" class="form-control">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nome:</label>
+        <input name="post_name" type="text" class="form-control" id="name">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Contenuto:</label>
+        <input name="post_content" type="text" class="form-control" id="content">
+    </div>
+    <div class="mb-3">
+        <?= $viewModel->getBlockHtml('formkey') ?>
+        <button type="submit" class="btn btn-primary"><?= $escaper->escapeHtml( __('Save') ) ?></button>
+    </div>
+</form>

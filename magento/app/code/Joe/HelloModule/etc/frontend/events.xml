@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+<!--    <event name="joe_hellomodule_display_text">-->
+<!--        <observer name="mp_display_text" instance="Joe\HelloModule\Observer\ChangeDisplayText" />-->
+<!--    </event>-->
+    <event name="checkout_cart_add_product_complete">
+        <observer name="joe_display_text" instance="Joe\HelloModule\Observer\MyEventObserver" />
+    </event>
+</config>

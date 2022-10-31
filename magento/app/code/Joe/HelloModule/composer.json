@@ -1,0 +1,20 @@
+{
+  "name": "joe/module-hello-module",
+  "version": "1.0.0",
+  "description": "module-test joe",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "Mozilla Public License (MPL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Joe\\HelloModule\\": ""
+    }
+  }
+}

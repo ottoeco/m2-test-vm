@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!--  configure interface  -->
+    <preference for="Joe\HelloModule\Api\PostRepositoryInterface" type="Joe\HelloModule\Model\PostRepository" />
+    <preference for="Joe\HelloModule\Api\Data\PostInterface" type="Joe\HelloModule\Model\Post" />
+<!-- Joe-Custom-Logger -->
+    <type name="Joe\HelloModule\Logger\CustomLog\Handler\MyHandler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Joe\HelloModule\Logger\CustomLog\MyLogger">
+        <arguments>
+            <argument name="name" xsi:type="string">Joe_Custom_Log</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Joe\HelloModule\Logger\CustomLog\Handler\MyHandler</item>
+            </argument>
+        </arguments>
+    </type>
+<!--  Joe Plugin  -->
+    <type name="Joe\HelloModule\Controller\Index\Example">
+        <plugin name="Joe_HelloModule_Plugin" type="Joe\HelloModule\Plugin\MyPlugin" sortOrder="1" disabled="false"/>
+    </type>
+</config>

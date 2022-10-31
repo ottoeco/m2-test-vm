@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!--Post API-->
+    <route url="/V1/rest_dev/getPost/:postId" method="GET">
+        <service class="Joe\HelloModule\Api\PostRepositoryInterface" method="getById" />
+        <resources>
+            <resource ref="Joe_HelloModule::posts_get" />
+            <!--<resource ref="anonymous"/>-->
+        </resources>
+    </route>
+    <route url="/V1/rest_dev/newPost/" method="POST">
+        <service class="Joe\HelloModule\Api\PostRepositoryInterface" method="save" />
+        <resources>
+            <resource ref="Joe_HelloModule::post_new"/>
+        </resources>
+    </route>
+    <route url="/V1/rest_dev/delPost/:postId" method="DELETE">
+        <service class="Joe\HelloModule\Api\PostRepositoryInterface" method="deleteById" />
+        <resources>
+            <resource ref="Joe_HelloModule::post_del"/>
+        </resources>
+    </route>
+    <route url="/V1/rest_dev/editPost/" method="PUT">
+        <service class="Joe\HelloModule\Api\PostRepositoryInterface" method="save" />
+        <resources>
+            <resource ref="Joe_HelloModule::post_edit"/>
+        </resources>
+    </route>
+</routes>

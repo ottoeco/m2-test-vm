@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @var Joe\HelloModule\ViewModel\Post\PostEditViewModel $viewModel
+ * @var Magento\Framework\Escaper $escaper
+ */
+$viewModel = $viewModel->getViewModel(); ?>
+<h1><?= $escaper->escapeHtml($viewModel->getTitle()) ?></h1>
+<style>
+    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+    tr:nth-child(even) { background-color: #ddffdd; }
+    .post-id{width:2%} .post-name{width:30%} .post-btn{background-color: #a67f59;}
+</style>
+<form action="<?= $escaper->escapeUrl($viewModel->getPostAction()) ?>" method="post" class="form-control">
+        <div class="mb-3">
+            <label for="post_id" class="form-label">ID:</label>
+            <input name="post_id" type="text" class="form-control" id="post_id" value="<?= $escaper->escapeHtml($viewModel->getEditPostRequest()->getPostId())?>" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Nome:</label>
+        <input name="post_name" type="text" class="form-control" id="name" value="<?= $escaper->escapeHtml($viewModel->getEditPostRequest()->getPostName())?>">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Contenuto:</label>
+        <input name="post_content" type="text" class="form-control" id="content" value="<?= $escaper->escapeHtml($viewModel->getEditPostRequest()->getPostContent())?>">
+    </div>
+    <div class="mb-3">
+        <?= $viewModel->getBlockHtml('formkey') ?>
+        <button type="submit" class="btn btn-primary"><?= $escaper->escapeHtml(__('Save')) ?></button>
+    </div>
+</form>

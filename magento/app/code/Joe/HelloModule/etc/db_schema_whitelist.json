@@ -1,0 +1,15 @@
+{
+    "joe_hellomodule_post": {
+        "column": {
+            "post_id": true,
+            "post_name": true,
+            "post_content": true
+        },
+        "index": {
+            "JOE_HELLOMODULE_POST_POST_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

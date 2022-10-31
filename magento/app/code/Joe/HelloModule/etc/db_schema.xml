@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+<!--  Post table  -->
+    <table name="joe_hellomodule_post" resource="default" engine="innodb" comment="">
+        <column xsi:type="int" name="post_id" unsigned="true" nullable="false" identity="true"/>
+        <column xsi:type="varchar" name="post_name" nullable="false"/>
+        <column xsi:type="varchar" name="post_content" nullable="false"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="post_id"/>
+        </constraint>
+        <index referenceId="JOE_HELLOMODULE_POST_ID" indexType="btree">
+            <column name="post_id"/>
+        </index>
+    </table>
+</schema>
