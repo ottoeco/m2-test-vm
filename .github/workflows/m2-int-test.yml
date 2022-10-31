@@ -1,4 +1,5 @@
 magento2-integration-test:
+on: [push]
 runs-on: ubuntu-latest
 container: ubuntu
 name: 'm2 integration test'
